@@ -43,7 +43,7 @@ class AuthController extends Controller
 
             return $this->apiResponse(true, 200, 'Logged in successfully.', $newToken);
         } catch (\Throwable $th) {
-            return $this->apiResponse(false, 500, $th->getMessage());
+            return $this->apiResponse(false, 500, 'Something went wrong', $th->getMessage());
         }
     }
 

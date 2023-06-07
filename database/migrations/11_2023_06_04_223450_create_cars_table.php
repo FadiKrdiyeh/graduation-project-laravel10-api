@@ -16,7 +16,7 @@ return new class() extends Migration {
             $table->integer('engine_capacity');
             $table->string('color');
             $table->integer('status');
-            $table->boolean('turbo');
+            $table->boolean('has_turbo');
             $table->boolean('is_new');
             $table->boolean('has_sunroof');
             $table->integer('kilometerage');
@@ -28,9 +28,9 @@ return new class() extends Migration {
             $table->timestamps();
             $table->foreignId('engine_type_id');
             $table->foreignId('transmission_id');
-            $table->foreignId('brand_id');
-            $table->foreignId('car_model_id');
-            $table->foreignId('type_of_shape_id');
+            $table->foreignId('brand_id')->constrained();
+            $table->foreignId('car_model_id')->constrained();
+            $table->foreignId('type_of_shop_id')->constrained();
         });
     }
 
