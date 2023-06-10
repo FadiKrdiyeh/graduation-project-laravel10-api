@@ -22,13 +22,13 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'cell_phone',
-        'subscription_package_id',
-    ];
+    protected $fillable = ['name', 'email', 'password', 'cell_phone', 'subscription_package_id'];
+
+    // ? Relations ...
+    public function posts ()
+    {
+        return $this->hasMany(Post::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

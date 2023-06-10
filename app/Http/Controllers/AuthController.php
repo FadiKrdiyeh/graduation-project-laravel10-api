@@ -122,4 +122,23 @@ class AuthController extends Controller
             'user' => auth()->user(),
         ];
     }
+
+    public function getAuthUserPosts ()
+    {
+        try {
+            $userPosts = User::where('id', auth()->id())
+                                ->with(['posts' => function ($query1) {
+                                    $query1->select('*');
+                                }])
+                                ->get();
+
+            if ($userPosts->posts->count() > 0) {
+                return $this->apiResponse(true, 200, 'User posts fetched successfully.', $userPosts);
+            } else {
+                return $this->apiResponse(true, 404, 'User doesn\'t has any posts yet.');
+            }
+        } catch (\Throwable $th) {
+            return $this->apiResponse(false, 500, 'Something went wrong', $th->getMessage());
+        }
+    }
 }

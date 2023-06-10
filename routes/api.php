@@ -36,6 +36,7 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
+    Route::get('/user-posts', [AuthController::class, 'getAuthUserPosts']);
 });
 
 Route::middleware(['api'])->group(function () {
