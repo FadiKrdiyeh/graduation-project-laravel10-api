@@ -129,8 +129,7 @@ class AuthController extends Controller
             $userPosts = User::where('id', auth()->id())
                                 ->with(['posts' => function ($query1) {
                                     $query1->select('*');
-                                }])
-                                ->get();
+                                }])->first();
 
             if ($userPosts->posts->count() > 0) {
                 return $this->apiResponse(true, 200, 'User posts fetched successfully.', $userPosts);
