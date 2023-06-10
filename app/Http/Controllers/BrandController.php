@@ -50,7 +50,7 @@ class BrandController extends Controller
             if ($brand) {
                 return $this->apiResponse(true, 201, 'Brand created successfully.', $brand);
             } else {
-                return $this->apiResponse(false, 400, 'Update brand faild.');
+                return $this->apiResponse(false, 400, 'Create brand faild.');
             }
         } catch (\Throwable $th) {
             return $this->apiResponse(false, 500, 'Something went wrong', $th->getMessage());

@@ -50,7 +50,7 @@ class CarModelController extends Controller
             if ($carModel) {
                 return $this->apiResponse(true, 201, 'Car model created successfully.', $carModel);
             } else {
-                return $this->apiResponse(false, 400, 'Update car model faild.');
+                return $this->apiResponse(false, 400, 'Create car model faild.');
             }
         } catch (\Throwable $th) {
             return $this->apiResponse(false, 500, 'Something went wrong', $th->getMessage());

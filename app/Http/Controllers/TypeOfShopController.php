@@ -50,7 +50,7 @@ class TypeOfShopController extends Controller
             if ($typeOfShop) {
                 return $this->apiResponse(true, 201, 'Type of shop created successfully.', $typeOfShop);
             } else {
-                return $this->apiResponse(false, 400, 'Update type of shop faild.');
+                return $this->apiResponse(false, 400, 'Create type of shop faild.');
             }
         } catch (\Throwable $th) {
             return $this->apiResponse(false, 500, 'Something went wrong', $th->getMessage());

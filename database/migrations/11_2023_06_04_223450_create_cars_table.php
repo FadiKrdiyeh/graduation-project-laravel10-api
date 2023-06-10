@@ -26,8 +26,8 @@ return new class() extends Migration {
             $table->integer('top_speed');
             $table->integer('dimensions');
             $table->timestamps();
-            $table->foreignId('engine_type_id');
-            $table->foreignId('transmission_id');
+            $table->foreignId('fuel_type_id')->constrained();
+            $table->foreignId('transmission_id')->constrained();
             $table->foreignId('brand_id')->constrained();
             $table->foreignId('car_model_id')->constrained();
             $table->foreignId('type_of_shop_id')->constrained();

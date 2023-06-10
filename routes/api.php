@@ -1,14 +1,18 @@
 <?php
 
+use App\Http\Controllers\AgencyController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\CarModelController;
 use App\Http\Controllers\FuelTypeContrller;
 use App\Http\Controllers\PaymentMethodController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\SubscriptionPackageController;
 use App\Http\Controllers\TransmissionController;
 use App\Http\Controllers\TypeOfPackageController;
 use App\Http\Controllers\TypeOfShopController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\WorkshopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,4 +46,10 @@ Route::middleware(['api'])->group(function () {
     Route::resource('type-of-packages', TypeOfPackageController::class)->except(['create', 'edit']);
     Route::resource('payment-methods', PaymentMethodController::class)->except(['create', 'edit']);
     Route::resource('car-models', CarModelController::class)->except(['create', 'edit']);
+    Route::resource('posts', PostController::class)->except(['create', 'edit']);
+    Route::resource('subscription-packages', SubscriptionPackageController::class)->except(['create', 'edit']);
+    Route::resource('cars', CarController::class)->except(['create', 'edit']);
+    Route::resource('car-models', CarModelController::class)->except(['create', 'edit']);
+    Route::resource('agencies', AgencyController::class)->except(['create', 'edit']);
+    Route::resource('workshops', WorkshopController::class)->except(['create', 'edit']);
 });

@@ -50,7 +50,7 @@ class PaymentMethodController extends Controller
             if ($paymentMethod) {
                 return $this->apiResponse(true, 201, 'Payment method created successfully.', $paymentMethod);
             } else {
-                return $this->apiResponse(false, 400, 'Update payment method faild.');
+                return $this->apiResponse(false, 400, 'Create payment method faild.');
             }
         } catch (\Throwable $th) {
             return $this->apiResponse(false, 500, 'Something went wrong', $th->getMessage());

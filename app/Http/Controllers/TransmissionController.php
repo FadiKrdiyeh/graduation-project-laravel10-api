@@ -50,7 +50,7 @@ class TransmissionController extends Controller
             if ($transmission) {
                 return $this->apiResponse(true, 201, 'Transmission created successfully.', $transmission);
             } else {
-                return $this->apiResponse(false, 400, 'Update transmission faild.');
+                return $this->apiResponse(false, 400, 'Create transmission faild.');
             }
         } catch (\Throwable $th) {
             return $this->apiResponse(false, 500, 'Something went wrong', $th->getMessage());

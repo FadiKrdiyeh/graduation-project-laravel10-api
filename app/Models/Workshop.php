@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Workshop extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'address', 'longitude', 'latitude', 'jurisdiction', 'oppening_time', 'closing_time', 'description', 'features', 'user_id'];
 }

@@ -50,7 +50,7 @@ class FuelTypeContrller extends Controller
             if ($fuelType) {
                 return $this->apiResponse(true, 201, 'Fuel type created successfully.', $fuelType);
             } else {
-                return $this->apiResponse(false, 400, 'Update fuel type faild.');
+                return $this->apiResponse(false, 400, 'Create fuel type faild.');
             }
         } catch (\Throwable $th) {
             return $this->apiResponse(false, 500, 'Something went wrong', $th->getMessage());

@@ -50,7 +50,7 @@ class TypeOfPackageController extends Controller
             if ($typeOfPackage) {
                 return $this->apiResponse(true, 201, 'Type of package created successfully.', $typeOfPackage);
             } else {
-                return $this->apiResponse(false, 400, 'Update type of package faild.');
+                return $this->apiResponse(false, 400, 'Create type of package faild.');
             }
         } catch (\Throwable $th) {
             return $this->apiResponse(false, 500, 'Something went wrong', $th->getMessage());
